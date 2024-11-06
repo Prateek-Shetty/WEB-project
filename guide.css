@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #150202;
+    line-height: 1.6;
+
+}
+
+   /*HEADER CSS */
+header {
+    background: linear-gradient(90deg, #ff4b3a, #ff7f50);
+    color: white;
+    padding: 5px; 
+    text-align: center;
+    position: relative;
+    animation: slideDown 1.5s ease-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+nav ul li {
+    margin: 0 15px;
+   
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#about {
+    background-color: #f4f4f4;
+    text-decoration: solid;
+    text-shadow: red;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: solid;
+    text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 18px;
+    
+}
+
+/* Destination Grid */
+
+#destinations{
+    background-color: #33103c;
+    background: linear-gradient(to right, #670dc8, pink,#2575fc);
+
+}
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Destination Card with Colors */
+.destination-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Unique Colors for Cards */
+.destination-card:nth-child(1) {
+    background-color: #ffebcc;
+}
+.destination-card:nth-child(2) {
+    background-color: #d5f4e6;
+}
+.destination-card:nth-child(3) {
+    background-color: #ffcccb;
+}
+.destination-card:nth-child(4) {
+    background-color: #f3e6ff;
+}
+.destination-card:nth-child(5) {
+    background-color: #ffffe0;
+}
+.destination-card:nth-child(6) {
+    background-color: #d1f0b1;
+}
+.destination-card:nth-child(7) {
+    background-color: #ffccee;
+}
+.destination-card:nth-child(8) {
+    background-color: #b3e6ff;
+}
+.destination-card:nth-child(9) {
+    background-color: #fdd5b1;
+}
+.destination-card:nth-child(10) {
+    background-color: #c8dfff;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+
+
+/* 3D Hover Effects for Cards */
+.destination-card:hover {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: #77aaf2;
+}
+
+.destination-card:hover img {
+    transform: scale(1.2);
+}
+
+.destination-card h3 {
+    margin: 15px 0 10px;
+    color: #ff4b3a;
+    transition: color 0.3s ease;
+}
+
+.destination-card:hover h3 {
+    color: white;
+}
+
+.destination-card p {
+    color: #666;
+}
+
+.destination-card:hover p {
+    color: white;
+}
+
+/* Cuisine Grid */
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cuisine-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    text-align: center;
+}
+
+.cuisine-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cuisine-card h3 {
+    margin: 15px 0 10px;
+    color: #ff4b3a;
+}
+
+.cuisine-card p {
+    color: #666;
+}
+
+.cuisine-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* Cuisine Card with Hover Effect */
+.cuisine-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Unique Colors for Cuisine Cards */
+.cuisine-card:nth-child(1) {
+    background-color: #ffd1dc; /* Light Pink */
+}
+.cuisine-card:nth-child(2) {
+    background-color: #e6ffe6; /* Light Green */
+}
+.cuisine-card:nth-child(3) {
+    background-color: #fff0b3; /* Light Yellow */
+}
+.cuisine-card:nth-child(4) {
+    background-color: #ccf2ff; /* Light Blue */
+}
+.cuisine-card:nth-child(5) {
+    background-color: #ffdab3; /* Light Peach */
+}
+.cuisine-card:nth-child(6) {
+    background-color: #d1e0e0; /* Light Gray */
+}
+.cuisine-card:nth-child(7) {
+    background-color: #f2e6ff; /* Light Purple */
+}
+.cuisine-card:nth-child(8) {
+    background-color: #ffe6cc; /* Light Orange */
+}
+.cuisine-card:nth-child(9) {
+    background-color: #e6e6ff; /* Light Lavender */
+}
+.cuisine-card:nth-child(10) {
+    background-color: #e6ffe6; /* Light Mint */
+}
+
+/* 3D Hover Effects for Cuisine Cards */
+.cuisine-card:hover {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: #77aaf2; /* Hover color change */
+}
+
+.cuisine-card:hover h3 {
+    color: white;
+}
+
+.cuisine-card:hover p {
+    color: white;
+}
+
+.cuisine-card img {
+    transition: transform 0.5s ease;
+}
+
+.cuisine-card:hover img {
+    transform: scale(1.2);
+}
+#food{
+    background-color: #e7430c;
+    background: linear-gradient(to bottom, #f57d5f, #2f48b5,rgb(238, 212, 236));
+
+}
+
+
+/*converter css*/
+
+.converter {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+ #money-converter{
+    background-color: #dee6d5;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+
+
+ }
+#translator{
+    background-color: #990819;
+}
+
+ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*extra animation*/
+
+/* Transition effect for images in destination cards */
+.destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.6s ease, filter 0.6s ease; /* Added filter transition */
+    z-index: 0; /* Ensure image is behind the overlay */
+}
+
+/* On hover, scale and apply a slight blur effect */
+.destination-card:hover img {
+    transform: scale(1.2); /* Scale up the image */
+    filter: brightness(0.8)  /* Make it slightly darker */
+}
+
+/* Transition effect for images in cuisine cards */
+.cuisine-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.6s ease, filter 0.6s ease; /* Added filter transition */
+    z-index: 0; /* Ensure image is behind the overlay */
+}
+
+/* On hover, scale and apply a slight blur effect */
+.cuisine-card:hover img {
+    transform: scale(1.2); /* Scale up the image */
+    filter: brightness(0.8) ; /* Make it slightly darker  */
+}
+
+
+button{
+    border-radius: 20%;
+}

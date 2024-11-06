@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hotel Search - Japan</title>
+</head>
+<!-- Include flatpickr CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        /* background-image: url(./imag/hotel.jpeg);
+        background-size: cover;  */
+        background-image: linear-gradient(to right, rgb(154, 46, 46) , rgb(146, 96, 226),rgb(245, 238, 238));
+    }
+    
+    header {
+        background: #db3030;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .search-form {
+        opacity: 0.85;
+    }
+    
+    .search-results {
+        opacity: 0.85;
+        display: none; /* Initially hidden */
+    }
+    
+    .search-form, .search-results {
+        background: white;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .search-form h2, .search-results h2 {
+        margin-top: 0;
+    }
+    
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        background: #db3030;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background: #c72e2e; /* Slightly darker on hover */
+    }
+    
+    .hotel-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #db3030;
+        color: white;
+    }
+
+    .hotel-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hotel-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Hotel Search in Japan</h1>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./guide.html">Guide</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="search-form">
+            <h2>Find Your Perfect Hotel</h2>
+            <form action="#" method="GET" onsubmit="showResults(event)">
+                <label for="location">Location:</label>
+                <select id="loc" name="Locations">
+                    <option value="SELECT">Select the location</option>
+                    <option value="TOKYO">TOKYO</option>
+                    <option value="KYOTO">KYOTO</option>
+                    <option value="OSAKA">OSAKA</option>
+                    <option value="Hiroshima">HIROSHIMA</option>
+                    <option value="Nara">NARA</option>
+                </select>
+        
+                <label for="check-in">Check-in:</label>
+                <input type="text" id="check-in" name="check-in" required>
+        
+                <label for="check-out">Check-out:</label>
+                <input type="text" id="check-out" name="check-out" required>
+        
+                <label for="guests">Guests:</label>
+                <select id="guests" name="guests">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                </select>
+        
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section class="search-results" id="searchResults">
+            <h2>Available Hotels</h2>
+            <div class="hotel-card">
+                <img src="./imag/tokyo hotel.jpg" alt="Tokyo Bay Shiomi Prince Hotel" />
+                <h3>Tokyo Bay Shiomi Prince Hotel</h3>
+                <p>Location: Tokyo</p>
+                <p>Price: ¥17,000 per night</p>
+                <a href="https://maps.app.goo.gl/ez5o9ZVxwJyUfZnK8"><button>View Details</button></a>
+            </div>
+            <div class="hotel-card">
+                <img src="./imag/kyoto-hotel.jpg" alt="Hyatt Place Kyoto" />
+                <h3>Hyatt Place Kyoto</h3>
+                <p>Location: Kyoto</p>
+                <p>Price: ¥9,000 per night</p>
+                <a href="https://maps.app.goo.gl/Jm8vrSUXzfYaCm8w6"><button>View Details</button></a>
+            </div>
+            <div class="hotel-card">
+                <img src="./imag/osaka-hotel.jpg" alt="The Royal Park Hotel Iconic Osaka-Midosuji" />
+                <h3>The Royal Park Hotel Iconic Osaka-Midosuji</h3>
+                <p>Location: Osaka, Namba</p>
+                <p>Price: ¥11,000 per night</p>
+                <a href="https://maps.app.goo.gl/qNKnESCWopXY92XV9"><button>View Details</button></a>
+            </div>
+            <div class="hotel-card">
+                <img src="./imag/hiro-hotel.jpg" alt="Grand Prince Hotel Hiroshima" />
+                <h3>Grand Prince Hotel Hiroshima</h3>
+                <p>Location: Hiroshima</p>
+                <p>Price: ¥12,500 per night</p>
+                <a href="https://maps.app.goo.gl/TGVESg4qjvGnD5xm8"><button>View Details</button></a>
+            </div>
+            <div class="hotel-card">
+                <img src="./imag/nara-hotel.jpeg" alt="Noborioji Hotel Nara" />
+                <h3>Noborioji Hotel Nara</h3>
+                <p>Location: Nara</p>
+                <p>Price: ¥8,000 per night</p>
+                <a href="https://maps.app.goo.gl/3wBrbdVPoxj22ywu9"><button>View Details</button></a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Japan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showResults(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('searchResults').style.display = 'block'; // Show the search results
+        }
+
+            // Set the minimum date for check-in to today
+    // const today = new Date().toISOString().split("T")[0];
+    // document.getElementById("check-in").setAttribute("min", today);
+
+     // Initialize flatpickr on the check-in and check-out inputs
+    flatpickr("#check-in", {
+        minDate: "today",
+        dateFormat: "Y-m-d"
+    });
+
+    flatpickr("#check-out", {
+        minDate: new Date().fp_incr(1), // Ensures check-out is after check-in
+        dateFormat: "Y-m-d"
+    });
+
+    </script>
+</body>
+</html>
