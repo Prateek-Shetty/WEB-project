@@ -1,2 +1,4 @@
 # WEB-project
-JAPAN tourisim guide with frontend
+JAPAN tourisim guide
+only frontend 
+in home page add the video link in url by downloading 
